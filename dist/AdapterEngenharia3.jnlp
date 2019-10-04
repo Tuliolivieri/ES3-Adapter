@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="AdapterEngenharia3.jnlp">
+  <information>
+    <title>AdapterEngenharia3</title>
+    <vendor>Aluno</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="AdapterEngenharia3.jar" size="8234" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="AdapterEngenharia3" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="adapterengenharia3.AdapterEngenharia3"  name="AdapterEngenharia3" />
+  <update check="always"/>
+</jnlp>
