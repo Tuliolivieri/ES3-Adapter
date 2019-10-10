@@ -13,8 +13,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 /**
@@ -30,10 +32,11 @@ public class FXMLExibeController implements Initializable {
     private TextField tfRG;
     @FXML
     private TextField tfCPF;
-    @FXML
-    private TextField tfTelefone;
+    
     @FXML
     private TextField tfEndereco;
+    @FXML
+    private ListView<String> lvTelefones;
 
     /**
      * Initializes the controller class.
@@ -47,7 +50,7 @@ public class FXMLExibeController implements Initializable {
             arq = new FileReader("dados.txt");
             BufferedReader leArq = new BufferedReader(arq);
             String larry = leArq.readLine();
-            
+            System.out.println(larry);
             String[] campos = larry.split(";");
             
             Dados d = new Dados();
@@ -55,7 +58,11 @@ public class FXMLExibeController implements Initializable {
             d.setNome(campos[0]);
             d.setRG(campos[1]);
             d.setCPF(campos[2]);
-            d.setTelefone(campos[3]);
+            
+            String[] tels = campos[3].split(",");
+            for(int i = 0; i < tels.length; i++)
+                d.getTelefone().add(tels[i]);
+            
             d.setEndereco(campos[4]);
             
             arq.close();
@@ -63,7 +70,7 @@ public class FXMLExibeController implements Initializable {
             tfNome.setText(d.getNome());
             tfRG.setText(d.getRG());
             tfCPF.setText(d.getCPF());
-            tfTelefone.setText(d.getTelefone());
+            lvTelefones.setItems(FXCollections.observableArrayList(d.getTelefone()));
             tfEndereco.setText(d.getEndereco());
             
         } catch (FileNotFoundException ex) {

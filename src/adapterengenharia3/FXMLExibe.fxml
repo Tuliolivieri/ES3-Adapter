@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -18,9 +19,9 @@
       <TextField fx:id="tfRG" layoutX="102.0" layoutY="158.0" />
       <Label layoutX="45.0" layoutY="188.0" text="CPF:" />
       <TextField fx:id="tfCPF" layoutX="102.0" layoutY="188.0" />
-      <Label layoutX="45.0" layoutY="218.0" text="Telefone:" />
-      <TextField fx:id="tfTelefone" layoutX="102.0" layoutY="218.0" />
-      <Label layoutX="45.0" layoutY="248.0" text="Endereço" />
-      <TextField fx:id="tfEndereco" layoutX="102.0" layoutY="248.0" />
+      <Label layoutX="45.0" layoutY="218.0" text="Telefones:" />
+      <Label layoutX="43.0" layoutY="328.0" text="Endereço:" />
+      <TextField fx:id="tfEndereco" layoutX="101.0" layoutY="324.0" />
+      <ListView fx:id="lvTelefones" layoutX="101.0" layoutY="222.0" prefHeight="98.0" prefWidth="149.0" />
    </children>
 </AnchorPane>

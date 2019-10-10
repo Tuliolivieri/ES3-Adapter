@@ -38,14 +38,25 @@ public class AdapterTXT extends Target
             d.setNome(campos[0]);
             d.setRG(campos[1]);
             d.setCPF(campos[2]);
-            d.setTelefone(campos[3]);
+            String[] tels = campos[3].split(",");
+            for(int i = 0; i < tels.length; i++)
+                d.getTelefone().add(tels[i]);
+            
             d.setEndereco(campos[4]);
             
             arq.close();
             
             FileWriter fr = new FileWriter("dados.txt");
             PrintWriter gravarArq = new PrintWriter(fr);
-            gravarArq.printf(d.getNome() + ";" + d.getRG() + ";" + d.getCPF() + ";" + d.getTelefone() + ";" + d.getEndereco() + ";");
+            
+            String linha = d.getNome() + ";" + d.getRG() + ";" + d.getCPF() + ";";
+        
+            for(int i = 0; i < d.getTelefone().size(); i++)
+                linha += d.getTelefone().get(i) + ",";
+            linha += ";";
+            linha += d.getEndereco() + ";";
+            
+            gravarArq.printf(linha);
             fr.close();
             
         } catch (FileNotFoundException ex)

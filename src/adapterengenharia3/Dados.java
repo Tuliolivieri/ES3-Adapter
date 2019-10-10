@@ -5,6 +5,9 @@
  */
 package adapterengenharia3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Aluno
@@ -14,18 +17,19 @@ public class Dados
     String Nome;
     String RG;
     String CPF;
-    String Telefone;
+    List<String> Telefone;
     String Endereco;
 
-    public Dados(String Nome, String RG, String CPF, String Telefone, String Endereco) {
+    public Dados(String Nome, String RG, String CPF, List Telefone, String Endereco) {
         this.Nome = Nome;
         this.RG = RG;
         this.CPF = CPF;
-        this.Telefone = Telefone;
+        Telefone = new ArrayList<String>();
+        this.Telefone.addAll(Telefone);
         this.Endereco = Endereco;
     }
     
-    public Dados(){}
+    public Dados(){Telefone = new ArrayList<String>();}
     
     public String getNome() {
         return Nome;
@@ -51,14 +55,14 @@ public class Dados
         this.CPF = CPF;
     }
 
-    public String getTelefone() {
+    public List<String> getTelefone() {
         return Telefone;
     }
 
-    public void setTelefone(String Telefone) {
+    public void setTelefone(List<String> Telefone) {
         this.Telefone = Telefone;
     }
-
+    
     public String getEndereco() {
         return Endereco;
     }
