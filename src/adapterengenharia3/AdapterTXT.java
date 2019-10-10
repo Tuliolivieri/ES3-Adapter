@@ -34,7 +34,7 @@ public class AdapterTXT extends Target
             String[] campos = larry.split(";");
             
             d = new Dados();
-            
+            //// ANTES BROXA Q SEM BARBA
             d.setNome(campos[0]);
             d.setRG(campos[1]);
             d.setCPF(campos[2]);
